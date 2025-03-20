@@ -1,0 +1,91 @@
+imrApp/
+├── app/
+│   ├── page.js                                  # Homepage routing to Movies List Page — [M2]
+│   └── layout.js                                # Page layout wrapper, includes Navbar/Footer — [M1]
+│
+├── components/
+│   ├── Navbar.js                                # Static navbar component — [M1]
+│   ├── Footer.js                                # Static footer with company info — [M1]
+│   ├── MovieList.js                             # Displays list of movies — [M2]
+│   ├── AddMovieForm.js                          # Form to add new movie — [M3]
+│   └── EditMovieForm.js                         # Form to edit movie info — [M3]
+│
+├── lib/
+│   └── prisma.js                                # Prisma client setup and MongoDB connection — [M2]
+│
+├── pages/
+│   └── api/
+│       └── movies/
+│           ├── index.js                         # Handles GET (list) and POST (create) — [GET: M2, POST: M3]
+│           └── [id].js                          # Handles PUT (edit) and DELETE — [PUT: M3, DELETE: M4]
+│
+├── prisma/
+│   └── schema.prisma                            # Prisma schema definition for movies — [M2]
+│
+├── public/
+│   └── favicon.ico                              # Site icon — [M1 for setup]
+│
+├── .env                                         # Environment file for MongoDB URI — [M1]
+├── package.json                                 # Project config/dependencies — [M1 initial setup]
+└── README.md                                    # Project overview + contribution details — [ALL]
+
+
+------------------------------------------------------------------------------------------------------
+
++----------+------------------------------------------------------------+---------------------------------------------------------------+
+| Member   | Assigned Files & Functions                                | Description of Each Task                                      |
++----------+------------------------------------------------------------+---------------------------------------------------------------+
+| M1       | layout.js (Layout)                                         | Wraps all pages with a consistent layout; includes Navbar and |
+|          |                                                            | Footer.                                                       |
+|          | Navbar.js, Footer.js                                       | Creates static components for navigation and site info/footer,|
+|          |                                                            | used across all pages.                                        |
+|          | .env, package.json setup                                   | Initialize project, install dependencies, and configure       |
+|          |                                                            | MongoDB URI in .env.                                          |
+|          | favicon.ico                                                | Add the site icon for branding; placed in public/.            |
+|          | Deployment (Vercel)                                        | Deploy the completed app to Vercel and ensure environment     |
+|          |                                                            | variables (e.g., MongoDB URI) are set properly.               |
++----------+------------------------------------------------------------+---------------------------------------------------------------+
+| M2       | page.js (HomePage)                                         | Homepage that fetches and displays movies using MovieList.    |
+|          | MovieList.js, fetchMovies()                                | UI component that lists movies; fetches data from API and     |
+|          |                                                            | displays title, actors, release year.                         |
+|          | lib/prisma.js                                              | Initializes and exports a singleton Prisma client to connect  |
+|          |                                                            | with MongoDB.                                                 |
+|          | GET in index.js                                            | Handles API GET request to retrieve all movies from MongoDB   |
+|          |                                                            | and send as JSON.                                             |
+|          | schema.prisma                                              | Defines the movie model with fields (title, actors, release   |
+|          |                                                            | year) and connects Prisma to MongoDB.                         |
++----------+------------------------------------------------------------+---------------------------------------------------------------+
+| M3       | AddMovieForm.js, handleSubmit()                            | UI form to create new movies; handles form input, validation, |
+|          |                                                            | and POST request to API.                                      |
+|          | EditMovieForm.js, handleEditSubmit()                       | UI form to edit existing movies; pre-fills data, handles      |
+|          |                                                            | updates, and sends PUT request to API.                        |
+|          | POST in index.js                                           | Handles API POST request to add a new movie to MongoDB via    |
+|          |                                                            | Prisma.                                                       |
+|          | PUT in [id].js                                             | Handles API PUT request to update a movie’s details in the    |
+|          |                                                            | database.                                                     |
++----------+------------------------------------------------------------+---------------------------------------------------------------+
+| M4       | DELETE in [id].js                                          | Handles API DELETE request to remove a movie from MongoDB     |
+|          |                                                            | based on ID.                                                  |
+|          | Delete button/modal in MovieList.js                        | Adds delete UI (button/modal) to allow users to delete a      |
+|          |                                                            | movie; triggers delete function.                              |
+|          | Delete handler to call API and update list                 | Handles API call for deletion and re-renders updated movie    |
+|          |                                                            | list after successful deletion.                               |
++----------+------------------------------------------------------------+---------------------------------------------------------------+
+
+
+-----------------------------
+
+Packages to install:
+
+npm install next react react-dom
+npm install prisma --save-dev
+npm install @prisma/client
+npm install mongodb
+
+Package	        Purpose
+next	        Framework for building React-based full-stack web apps.
+react	        React library for building UI components.
+react-dom	    Provides DOM-specific methods for React.
+prisma	        (Dev Dependency) ORM tool to define schema and run database migrations.
+@prisma/client	Prisma’s runtime client to query MongoDB in your code.
+mongodb	        MongoDB driver for connecting directly if needed (optional with Prisma).
