@@ -1,67 +1,132 @@
-import Link from "next/link"
-import { Film, Mail, Phone, MapPin } from "lucide-react"
+import Link from "next/link";
 
 const Footer = () => {
-    return (
-        <footer className="bg-muted py-8 bg-slate-200 border-t-2"   >
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div>
-                <div className="flex items-center mb-4">
-                  <Film className="h-6 w-6 text-primary"/>
-                  <span className="ml-2 text-lg font-bold">Internet Movies Rental</span>
-                </div>
-                <p className="text-muted-foreground">Your one-stop destination for all your movie rental needs.</p>
+  return (
+    <footer className="bg-gray-100 py-12 px-6 mt-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div>
+            <h2 className="text-xl font-bold mb-4">MovieDB</h2>
+            <p className="text-gray-600">
+              Movie Database is a comprehensive platform that provides
+              information about movies, TV shows, and celebrities. Our mission
+              is to help you discover and explore the world of entertainment.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold mb-4">Quick Links</h2>
+            <ul className="space-y-2">
+              <li>
+                <Link href="/" className="text-gray-600 hover:text-gray-800">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/movies"
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  Movies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy"
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold mb-4">Contact Us</h2>
+            <div className="space-y-2">
+              <div className="flex items-start">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mr-2 mt-0.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  ></path>
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+                <span className="text-gray-600">
+                  1301 16 Avenue NW, Calgary, Alberta, Canada, T2M 0L4
+                </span>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-                <ul className="space-y-2">
-                  <li>
-                    <Link href="/movies" className="text-muted-foreground hover:text-primary">
-                      Movies
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about" className="text-muted-foreground hover:text-primary">
-                      About Us
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/terms" className="text-muted-foreground hover:text-primary">
-                      Terms of Service
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/privacy" className="text-muted-foreground hover:text-primary">
-                      Privacy Policy
-                    </Link>
-                  </li>
-                </ul>
+              <div className="flex items-start">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mr-2 mt-0.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                  ></path>
+                </svg>
+                <span className="text-gray-600">+1 (555) 123-4567</span>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-4">Contact Us</h3>
-                <ul className="space-y-2">
-                  <li className="flex items-center">
-                    <MapPin className="h-4 w-4 mr-2 text-primary" />
-                    <span className="text-muted-foreground">123 Movie Street, Calgary, AB</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Phone className="h-4 w-4 mr-2 text-primary" />
-                    <span className="text-muted-foreground">(403) 123-4567</span>
-                  </li>
-                  <li className="flex items-center">
-                    <Mail className="h-4 w-4 mr-2 text-primary" />
-                    <span className="text-muted-foreground">contact@imr.com</span>
-                  </li>
-                </ul>
+              <div className="flex items-start">
+                <svg
+                  width="20"
+                  height="20"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="mr-2 mt-0.5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  ></path>
+                </svg>
+                <span className="text-gray-600">info@moviedb.com</span>
               </div>
-            </div>
-            <div className="mt-8 pt-8 border-t border-muted-foreground/20 text-center text-muted-foreground">
-              <p>&copy; {new Date().getFullYear()} Internet Movies Rental. All rights reserved.</p>
             </div>
           </div>
-        </footer>
-      )
-}
+        </div>
 
-export default Footer
+        <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
+          <p>© 2025 CoffeeMates. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
