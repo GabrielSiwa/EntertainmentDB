@@ -31,7 +31,60 @@ export default function Home() {
     fetchMovies();
   }, []);
 
- 
+  // Handle adding a movie
+
+  const handleAddMovie = async (movieData) => {
+    try {
+      const response = await fetch("/api/movies", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movieData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to add movie");
+      }
+
+      const newMovie = await response.json();
+      setMovies([...movies, newMovie]);
+      setShowAddModal(false);
+    } catch (err) {
+      console.error("Error adding movie:", err);
+      alert("Failed to add movie. Please try again.");
+    }
+  };
+
+  // Handle editing a movie
+  const handleEditMovie = async (movieData) => {
+    try {
+      const response = await fetch(`/api/movies/${movieData.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(movieData),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to update movie");
+      }
+
+      const updatedMovie = await response.json();
+      setMovies(
+        movies.map((movie) =>
+          movie.id === updatedMovie.id ? updatedMovie : movie
+        )
+      );
+      setShowEditModal(false);
+      setCurrentMovie(null);
+    } catch (err) {
+      console.error("Error updating movie:", err);
+      alert("Failed to update movie. Please try again.");
+    }
+  };
+
   // Handle deleting a movie
   const handleDeleteMovie = async (id) => {
     if (window.confirm("Are you sure you want to delete this movie?")) {
@@ -120,6 +173,23 @@ export default function Home() {
             />
           ))}
         </div>
+      )}
+      {showAddModal && (
+        <AddMovieModal
+          onClose={() => setShowAddModal(false)}
+          onSave={handleAddMovie}
+        />
+      )}
+
+      {showEditModal && currentMovie && (
+        <EditMovieModal
+          movie={currentMovie}
+          onClose={() => {
+            setShowEditModal(false);
+            setCurrentMovie(null);
+          }}
+          onSave={handleEditMovie}
+        />
       )}
     </main>
   );
