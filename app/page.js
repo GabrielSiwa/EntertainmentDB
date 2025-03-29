@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from "react";
 import MovieCard from "./components/MovieCard";
+import AddMovieModal from "./components/AddMovieModal";
+import EditMovieModal from "./components/EditMovieModal";
 
 import { useAdmin } from "./context/AdminContext";
 
@@ -9,6 +11,9 @@ export default function Home() {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [showAddModal, setShowAddModal] = useState(false);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [currentMovie, setCurrentMovie] = useState(null);
   const { adminView } = useAdmin();
 
   // Fetch movies from the API
