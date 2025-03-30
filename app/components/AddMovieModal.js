@@ -106,6 +106,7 @@ const AddMovieModal = ({ onClose, onSave }) => {
             )}
           </div>
 
+          {/* Release Year field */}
           <div className="mb-5">
             <label htmlFor="releaseYear" className="block mb-2 font-medium">
               Release Year
