@@ -2,14 +2,39 @@
 
 import { useState } from "react";
 
+/*
+Author: Lulubelle Fontelo
+Date: 30/03/2025  
+Description:  
+This React component displays a modal form that allows users to input and submit details for a new movie.  
+The form collects a title, release year, and a comma-separated list of actors. Input validation ensures all fields  
+are filled and that the release year is a valid 4-digit number.  
+
+Inputs:  
+- onClose: A function that closes the modal when the Cancel button or close (×) icon is clicked.  
+- onSave: A function triggered when the form is submitted and valid, receiving the new movie data.  
+
+Processing:  
+- Tracks form inputs using state and validates them before submission.  
+- Converts the comma-separated actors string into an array.  
+- Passes the movie data to the parent component via the onSave callback.  
+
+Outputs:  
+- A styled modal with a form to enter movie details.  
+- On submission, sends the valid movie object to the parent component for further processing.  
+*/
+
 const AddMovieModal = ({ onClose, onSave }) => {
+  // State to manage form data
   const [formData, setFormData] = useState({
     title: "",
     releaseYear: "",
     actors: "",
   });
+  // State to track form validation errors
   const [errors, setErrors] = useState({});
 
+  // Handles input changes and updates form data
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -18,6 +43,7 @@ const AddMovieModal = ({ onClose, onSave }) => {
     });
   };
 
+  // Validates form fields before submission
   const validateForm = () => {
     const newErrors = {};
     if (!formData.title.trim()) newErrors.title = "Title is required";
@@ -31,6 +57,7 @@ const AddMovieModal = ({ onClose, onSave }) => {
     return Object.keys(newErrors).length === 0;
   };
 
+  // Submits the form if valid and passes the movie data to parent
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -47,14 +74,18 @@ const AddMovieModal = ({ onClose, onSave }) => {
   };
 
   return (
+    // Modal background
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      {/* Modal container */}
       <div className="bg-white rounded-lg w-11/12 max-w-md max-h-[90vh] overflow-y-auto shadow-lg">
+        {/* Modal header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-200">
           <h2 className="text-xl font-bold">Add New Movie</h2>
           <button className="text-2xl text-gray-600" onClick={onClose}>
             ×
           </button>
         </div>
+        {/* Form */}
         <form onSubmit={handleSubmit} className="p-6">
           <div className="mb-5">
             <label htmlFor="title" className="block mb-2 font-medium">
@@ -94,6 +125,7 @@ const AddMovieModal = ({ onClose, onSave }) => {
             )}
           </div>
 
+          {/* Actors Field */}
           <div className="mb-5">
             <label htmlFor="actors" className="block mb-2 font-medium">
               Actors (comma separated)
@@ -113,6 +145,7 @@ const AddMovieModal = ({ onClose, onSave }) => {
             )}
           </div>
 
+          {/* Action Buttons */}
           <div className="flex justify-end gap-3 mt-6">
             <button
               type="button"
