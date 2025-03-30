@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/NavBar";
 import Footer from "./components/Footer.js";
 import { AdminProvider } from "./context/AdminContext";
 
