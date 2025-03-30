@@ -124,7 +124,7 @@ export default function Home() {
 
   return (
     <main className="max-w-7xl mx-auto px-4 py-8">
-      <div className="flex justify-between items-center mb-8">
+      <div className="justify-between items-center mb-8 text-center">
         <div>
           <h1 className="text-3xl font-bold mb-2">Movie Database</h1>
           <p className="text-gray-600">
@@ -132,31 +132,32 @@ export default function Home() {
             release years.
           </p>
         </div>
-        {adminView && (
-          <button
-            className="flex items-center bg-black text-white px-4 py-2 rounded text-sm"
-            onClick={() => setShowAddModal(true)}
-          >
-            <svg
-              width="20"
-              height="20"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-              className="mr-2"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M12 6v6m0 0v6m0-6h6m-6 0H6"
-              ></path>
-            </svg>
-            Add Movie
-          </button>
-        )}
       </div>
+
+      {adminView && (
+        <button
+          className="flex items-center bg-black text-white px-4 py-2 rounded text-sm"
+          onClick={() => setShowAddModal(true)}
+        >
+          <svg
+            width="20"
+            height="20"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="mr-2"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M12 6v6m0 0v6m0-6h6m-6 0H6"
+            ></path>
+          </svg>
+          Add Movie
+        </button>
+      )}
 
       {movies.length === 0 ? (
         <div className="text-center py-12 text-gray-600">
@@ -166,7 +167,7 @@ export default function Home() {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
           {movies.map((movie) => (
             <MovieCard
               key={movie.id}

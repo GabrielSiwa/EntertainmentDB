@@ -75,7 +75,7 @@ const Navbar = () => {
             strokeWidth="2"
           />
         </svg>
-        <Link href="/">MovieDB</Link>
+        <Link href="/">Hello {adminView ? "Admin User" : "Regular User"}!</Link>
       </div>
       <div className="flex gap-6 sm:gap-6">
         <Link href="/" className="hover:text-gray-600">
