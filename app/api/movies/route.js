@@ -23,153 +23,54 @@
 // - Errors: Returns an error message with appropriate status codes if issues occur (e.g., missing fields, server error).
 // */
 
-// import { NextResponse } from "next/server";
-// import prisma from "@/app/libs/prismadb";
-
-// export async function GET() {
-//   try {
-//     const movies = await prisma.movie.findMany({
-//       orderBy: {
-//         createdAt: "desc",
-//       },
-//     });
-
-//     return NextResponse.json(movies);
-//   } catch (error) {
-//     console.error("Error fetching movies:", error);
-//     return NextResponse.json(
-//       { message: "Error fetching movies" },
-//       { status: 500 }
-//     );
-//   }
-// }
-
-// export async function POST(request) {
-//   try {
-//     const body = await request.json();
-//     const { title, actors, releaseYear } = body;
-
-//     // Validation
-//     if (!title || !actors || !releaseYear) {
-//       return NextResponse.json(
-//         { message: "Missing required fields" },
-//         { status: 400 }
-//       );
-//     }
-
-//     // Create movie
-//     const movie = await prisma.movie.create({
-//       data: {
-//         title,
-//         actors,
-//         releaseYear,
-//       },
-//     });
-
-//     return NextResponse.json(movie, { status: 201 });
-//   } catch (error) {
-//     console.error("Error creating movie:", error);
-//     return NextResponse.json(
-//       { message: "Error creating movie" },
-//       { status: 500 }
-//     );
-//   }
-// }
-
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
-// GET a specific movie by ID
-export async function GET(request, { params }) {
+export async function GET() {
   try {
-    const { id } = params;
-
-    // // During build time, return a mock response
-    // if (process.env.NEXT_PHASE === "phase-production-build") {
-    //   return NextResponse.json({
-    //     id: "mock-id",
-    //     title: "Sample Movie",
-    //     releaseYear: 2023,
-    //     actors: ["Actor 1", "Actor 2"],
-    //   });
-    // }
-
-    const movie = await prisma.movie.findUnique({
-      where: {
-        id: id,
+    const movies = await prisma.movie.findMany({
+      orderBy: {
+        createdAt: "desc",
       },
     });
 
-    if (!movie) {
-      return NextResponse.json({ error: "Movie not found" }, { status: 404 });
-    }
-
-    return NextResponse.json(movie);
+    return NextResponse.json(movies);
   } catch (error) {
-    console.error("Error fetching movie:", error);
+    console.error("Error fetching movies:", error);
     return NextResponse.json(
-      { error: "Failed to fetch movie" },
+      { message: "Error fetching movies" },
       { status: 500 }
     );
   }
 }
 
-// UPDATE a movie by ID
-export async function PUT(request, { params }) {
+export async function POST(request) {
   try {
-    const { id } = params;
     const body = await request.json();
-    const { title, releaseYear, actors } = body;
+    const { title, actors, releaseYear } = body;
 
-    if (!title || !releaseYear || !actors) {
+    // Validation
+    if (!title || !actors || !releaseYear) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { message: "Missing required fields" },
         { status: 400 }
       );
     }
 
-    // Ensure actors is an array
-    const actorsArray = Array.isArray(actors)
-      ? actors
-      : actors.split(",").map((actor) => actor.trim());
-
-    const movie = await prisma.movie.update({
-      where: {
-        id: id,
-      },
+    // Create movie
+    const movie = await prisma.movie.create({
       data: {
         title,
-        releaseYear: Number.parseInt(releaseYear),
-        actors: actorsArray,
+        actors,
+        releaseYear,
       },
     });
 
-    return NextResponse.json(movie);
+    return NextResponse.json(movie, { status: 201 });
   } catch (error) {
-    console.error("Error updating movie:", error);
+    console.error("Error creating movie:", error);
     return NextResponse.json(
-      { error: "Failed to update movie" },
-      { status: 500 }
-    );
-  }
-}
-
-// DELETE a movie by ID
-export async function DELETE(request, { params }) {
-  try {
-    const { id } = params;
-
-    await prisma.movie.delete({
-      where: {
-        id: id,
-      },
-    });
-
-    return NextResponse.json({ message: "Movie deleted successfully" });
-  } catch (error) {
-    console.error("Error deleting movie:", error);
-    return NextResponse.json(
-      { error: "Failed to delete movie" },
+      { message: "Error creating movie" },
       { status: 500 }
     );
   }
