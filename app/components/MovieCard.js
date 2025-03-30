@@ -1,3 +1,24 @@
+/*
+Author: Alessandra Nicole Claur
+Date: 30/03/2025
+Description:
+This React component displays details of a movie, including its title, release year, and a list of actors.
+It also provides edit and delete functionalities if the user has admin privileges.
+
+Inputs:
+- movie: An object containing movie details (title, release year, and actors list).
+- onEdit: A function triggered when the edit button is clicked.
+- onDelete: A function triggered when the delete button is clicked.
+
+Processing:
+- The component renders the movie details inside a styled card.
+- If the user is an admin, edit and delete buttons are displayed.
+
+Outputs:
+- A card displaying the movie information.
+- Admin users can access buttons for editing and deleting the movie entry.
+*/
+
 "use client";
 
 import { useAdmin } from "../context/AdminContext";
