@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import MovieCard from "./components/MovieCard";
 import AddMovieModal from "./components/AddMovieModal";
 import EditMovieModal from "./components/EditMovieModal";
-
 import { useAdmin } from "./context/AdminContext";
 
 export default function Home() {
@@ -36,8 +35,7 @@ export default function Home() {
     fetchMovies();
   }, []);
 
-  // Handle adding a movie
-
+  // Handle adding a new movie
   const handleAddMovie = async (movieData) => {
     try {
       const response = await fetch("/api/movies", {
@@ -179,6 +177,7 @@ export default function Home() {
           ))}
         </div>
       )}
+
       {showAddModal && (
         <AddMovieModal
           onClose={() => setShowAddModal(false)}

@@ -47,61 +47,84 @@ const AddMovieModal = ({ onClose, onSave }) => {
   };
 
   return (
-    <div className="modal-overlay">
-      <div className="modal">
-        <div className="modal-header">
-          <h2>Add New Movie</h2>
-          <button className="modal-close" onClick={onClose}>
+    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white rounded-lg w-11/12 max-w-md max-h-[90vh] overflow-y-auto shadow-lg">
+        <div className="flex justify-between items-center p-4 border-b border-gray-200">
+          <h2 className="text-xl font-bold">Add New Movie</h2>
+          <button className="text-2xl text-gray-600" onClick={onClose}>
             ×
           </button>
         </div>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="title">Title</label>
+        <form onSubmit={handleSubmit} className="p-6">
+          <div className="mb-5">
+            <label htmlFor="title" className="block mb-2 font-medium">
+              Title
+            </label>
             <input
               type="text"
               id="title"
               name="title"
               value={formData.title}
               onChange={handleChange}
-              className={errors.title ? "input-error" : ""}
+              className={`w-full p-2 border ${
+                errors.title ? "border-red-500" : "border-gray-300"
+              } rounded`}
             />
-            {errors.title && <p className="error-message">{errors.title}</p>}
+            {errors.title && (
+              <p className="text-red-500 text-sm mt-1">{errors.title}</p>
+            )}
           </div>
 
-          <div className="form-group">
-            <label htmlFor="releaseYear">Release Year</label>
+          <div className="mb-5">
+            <label htmlFor="releaseYear" className="block mb-2 font-medium">
+              Release Year
+            </label>
             <input
               type="text"
               id="releaseYear"
               name="releaseYear"
               value={formData.releaseYear}
               onChange={handleChange}
-              className={errors.releaseYear ? "input-error" : ""}
+              className={`w-full p-2 border ${
+                errors.releaseYear ? "border-red-500" : "border-gray-300"
+              } rounded`}
             />
             {errors.releaseYear && (
-              <p className="error-message">{errors.releaseYear}</p>
+              <p className="text-red-500 text-sm mt-1">{errors.releaseYear}</p>
             )}
           </div>
 
-          <div className="form-group">
-            <label htmlFor="actors">Actors (comma separated)</label>
+          <div className="mb-5">
+            <label htmlFor="actors" className="block mb-2 font-medium">
+              Actors (comma separated)
+            </label>
             <textarea
               id="actors"
               name="actors"
               value={formData.actors}
               onChange={handleChange}
-              className={errors.actors ? "input-error" : ""}
+              className={`w-full p-2 border ${
+                errors.actors ? "border-red-500" : "border-gray-300"
+              } rounded min-h-[100px] resize-y`}
               placeholder="e.g. Tom Hanks, Robin Wright, Gary Sinise"
             />
-            {errors.actors && <p className="error-message">{errors.actors}</p>}
+            {errors.actors && (
+              <p className="text-red-500 text-sm mt-1">{errors.actors}</p>
+            )}
           </div>
 
-          <div className="modal-actions">
-            <button type="button" className="button-cancel" onClick={onClose}>
+          <div className="flex justify-end gap-3 mt-6">
+            <button
+              type="button"
+              className="px-4 py-2 bg-white border border-gray-300 rounded text-sm"
+              onClick={onClose}
+            >
               Cancel
             </button>
-            <button type="submit" className="button-save">
+            <button
+              type="submit"
+              className="px-4 py-2 bg-black text-white rounded text-sm"
+            >
               Save Movie
             </button>
           </div>

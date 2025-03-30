@@ -4,9 +4,9 @@ export default function About() {
       <h1 className="text-3xl font-bold mb-6">About MovieDB</h1>
       <div className="bg-white p-6 rounded-lg shadow-sm">
         <p className="mb-4">
-          MovieDB is your ultimate destination for movie information, featuring
-          a comprehensive database of films with details about actors and
-          release years.
+          IMR is your ultimate destination for movie information, featuring a
+          comprehensive database of films with details about actors and release
+          years.
         </p>
         <p className="mb-4">
           Our mission is to provide movie enthusiasts with accurate and
@@ -15,8 +15,8 @@ export default function About() {
           covered.
         </p>
         <p>
-          Founded in 2025, MovieDB continues to grow its database and improve
-          its features to better serve the global community of movie lovers.
+          Founded in 2025, IMR continues to grow its database and improve its
+          features to better serve the global community of movie lovers.
         </p>
       </div>
     </div>
