@@ -30,8 +30,8 @@ const Footer = () => {
             <h2 className="text-xl font-bold mb-4">MovieDB</h2>
             <p className="text-gray-600">
               Movie Database is a comprehensive platform that provides
-              information about movies, TV shows, and celebrities. Our mission
-              is to help you discover and explore the world of entertainment.
+              information about movies, and celebrities. Our mission is to help
+              you discover and explore the world of entertainment.
             </p>
           </div>
 
