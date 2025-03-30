@@ -92,7 +92,7 @@ const Navbar = () => {
               : "bg-blue-500 text-white border border-blue-500"
           } hover:opacity-90`}
         >
-          {adminView ? "Admin View" : "Regular View"}
+          Switch to {adminView ? "Regular View" : "Admin View"}
         </button>
       </div>
     </nav>
