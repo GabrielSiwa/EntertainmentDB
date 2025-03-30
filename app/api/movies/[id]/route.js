@@ -1,3 +1,24 @@
+/*
+Author: Mitzi Vera Escartin
+Date: 30/03/2025
+Description:
+This React component displays information about a movie, including its title, release year, and list of actors.
+Admin users are given access to edit and delete buttons for managing the movie entry.
+
+Inputs:
+- movie: An object containing the movie's details (title, release year, and list of actors).
+- onEdit: A callback function that is executed when the edit button is clicked.
+- onDelete: A callback function that is executed when the delete button is clicked.
+
+Processing:
+- The component creates a card with the movie's details.
+- It checks for admin privileges and shows edit and delete buttons accordingly.
+
+Outputs:
+- A styled card with movie details (title, release year, and actors list).
+- Edit and delete buttons for admin users to manage the movie entry.
+*/
+
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
