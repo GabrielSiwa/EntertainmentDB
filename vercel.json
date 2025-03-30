@@ -5,7 +5,7 @@
         "src": "package.json",
         "use": "@vercel/next",
         "config": {
-          "installCommand": "yarn install && prisma generate"
+          "installCommand": "yarn install && npx prisma generate"
         }
       }
     ],
@@ -13,3 +13,5 @@
       "PRISMA_GENERATE_DATAPROXY": "true"
     }
   }
+  
+  
