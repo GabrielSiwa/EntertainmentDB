@@ -6,7 +6,7 @@ const MovieCard = ({ movie, onEdit, onDelete }) => {
   const { adminView } = useAdmin();
 
   return (
-    <div className="bg-white border border-gray-200 rounded">
+    <div className="bg-white border border-gray-500 rounded">
       <div className="p-6">
         <h2 className="text-xl font-bold mb-1">{movie.title}</h2>
         <p className="text-gray-600 mb-4">Released: {movie.releaseYear}</p>
@@ -17,7 +17,7 @@ const MovieCard = ({ movie, onEdit, onDelete }) => {
             {movie.actors.map((actor, index) => (
               <span
                 key={index}
-                className="bg-gray-100 px-2 py-1 rounded text-sm"
+                className="bg-gray-200 px-2 py-1 rounded-md text-sm"
               >
                 {actor}
               </span>
