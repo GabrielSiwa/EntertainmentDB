@@ -99,6 +99,12 @@ const Navbar = () => {
         <Link href="/">
           Hello {adminView ? "Gabby!" : "WHO ARE YOU?!!?!?"}!
         </Link>
+        <Link href="/tvshow" className="hover:text-gray-600 px-5">
+          Tv Shows
+        </Link>
+        <Link href="/music" className="hover:text-gray-600 px-5">
+          Music
+        </Link>
       </div>
       <div className="flex gap-6 sm:gap-6">
         <Link href="/" className="hover:text-gray-600">
@@ -107,6 +113,7 @@ const Navbar = () => {
         <Link href="/about" className="hover:text-gray-600">
           About
         </Link>
+
         <button
           onClick={toggleAdminView}
           className={`flex items-center px-3 py-1.5 rounded text-sm font-medium ml-4 sm:ml-2 transition-all duration-200 ${
