@@ -34,7 +34,6 @@ const Footer = () => {
               you discover and explore the world of entertainment.
             </p>
           </div>
-
           <div>
             <h2 className="text-xl font-bold mb-4">Quick Links</h2>
             <ul className="space-y-2">
@@ -42,7 +41,7 @@ const Footer = () => {
                 <Link href="/" className="text-gray-600 hover:text-gray-800">
                   Home
                 </Link>
-              </li> 
+              </li>
               <li>
                 <Link
                   href="/about"
