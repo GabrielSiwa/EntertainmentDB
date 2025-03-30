@@ -1,3 +1,24 @@
+/*
+Author: Gabriel Siwa
+Date: 30/03/2025
+
+Description:
+This React component renders the footer section for the MovieDB platform.
+It provides a brief description, quick navigation links, and contact details.
+
+Inputs:
+- None
+
+Processing:
+- Displays static content including:
+  - MovieDB description
+  - Navigation links
+  - Contact details (address, phone, email)
+
+Outputs:
+- A styled footer section containing the platform’s information.
+*/
+
 import Link from "next/link";
 
 const Footer = () => {
