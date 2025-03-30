@@ -27,11 +27,13 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
-            <h2 className="text-xl font-bold mb-4">MovieDB</h2>
+            <h2 className="text-xl font-bold mb-4">Entertainment Database</h2>
             <p className="text-gray-600">
-              Movie Database is a comprehensive platform that provides
-              information about movies, and celebrities. Our mission is to help
-              you discover and explore the world of entertainment.
+              Entertainment Database is a comprehensive platform that provides
+              information about movies, TV Shows, music, artist, and
+              celebrities. My goal is to create a user-friendly interface that
+              allows users to easily search and discover my favorite
+              entertainment.
             </p>
           </div>
           <div>
@@ -80,7 +82,7 @@ const Footer = () => {
                   ></path>
                 </svg>
                 <span className="text-gray-600">
-                  1301 16 Avenue NW, Calgary, Alberta, Canada, T2M 0L4
+                  1317 27TH SE, Calgary, Canada
                 </span>
               </div>
               <div className="flex items-start">
@@ -100,7 +102,7 @@ const Footer = () => {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                   ></path>
                 </svg>
-                <span className="text-gray-600">+1 (555) 123-4567</span>
+                <span className="text-gray-600">+1 825-558-0898</span>
               </div>
               <div className="flex items-start">
                 <svg
@@ -119,14 +121,14 @@ const Footer = () => {
                     d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                   ></path>
                 </svg>
-                <span className="text-gray-600">info@moviedb.com</span>
+                <span className="text-gray-600">siwagabrielira8@gmail.com</span>
               </div>
             </div>
           </div>
         </div>
 
         <div className="border-t border-gray-200 mt-8 pt-8 text-center text-gray-600">
-          <p>© 2025 CoffeeMates. All rights reserved.</p>
+          <p>© 2025 Taro. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -96,7 +96,9 @@ const Navbar = () => {
             strokeWidth="2"
           />
         </svg>
-        <Link href="/">Hello {adminView ? "Admin User" : "Regular User"}!</Link>
+        <Link href="/">
+          Hello {adminView ? "Gabby!" : "WHO ARE YOU?!!?!?"}!
+        </Link>
       </div>
       <div className="flex gap-6 sm:gap-6">
         <Link href="/" className="hover:text-gray-600">
