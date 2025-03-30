@@ -42,29 +42,13 @@ const Footer = () => {
                 <Link href="/" className="text-gray-600 hover:text-gray-800">
                   Home
                 </Link>
-              </li>
-              <li>
-                <Link
-                  href="/movies"
-                  className="text-gray-600 hover:text-gray-800"
-                >
-                  Movies
-                </Link>
-              </li>
+              </li> 
               <li>
                 <Link
                   href="/about"
                   className="text-gray-600 hover:text-gray-800"
                 >
                   About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy"
-                  className="text-gray-600 hover:text-gray-800"
-                >
-                  Privacy Policy
                 </Link>
               </li>
             </ul>
