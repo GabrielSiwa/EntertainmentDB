@@ -1,3 +1,28 @@
+/*
+
+Author: Gabriel Siwa 
+Date: 30/03/2025  
+
+Description:  
+
+This React component renders the navigation bar for the MovieDB platform. It includes navigation links and an admin view toggle button.
+
+Inputs:  
+
+- None  
+
+Processing:  
+
+- Displays navigation links for "Home" and "About" pages.
+- Shows a greeting message that changes based on admin or regular user view.
+- Allows toggling between admin and regular view using a button.
+
+Outputs:  
+
+- A styled navigation bar with links and an admin toggle button.
+
+*/
+
 "use client";
 
 import Link from "next/link";
