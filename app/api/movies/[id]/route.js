@@ -22,20 +22,23 @@ Outputs:
 import { NextResponse } from "next/server";
 import prisma from "@/app/libs/prismadb";
 
+// Force dynamic rendering for this route
+export const dynamic = "force-dynamic";
+
 // GET a specific movie by ID
 export async function GET(request, { params }) {
   try {
     const { id } = params;
 
-    // During build time, return a mock response
-    if (process.env.NEXT_PHASE === "phase-production-build") {
-      return NextResponse.json({
-        id: "mock-id",
-        title: "Sample Movie",
-        releaseYear: 2023,
-        actors: ["Actor 1", "Actor 2"],
-      });
-    }
+    // // During build time, return a mock response
+    // if (process.env.NEXT_PHASE === "phase-production-build") {
+    //   return NextResponse.json({
+    //     id: "mock-id",
+    //     title: "Sample Movie",
+    //     releaseYear: 2023,
+    //     actors: ["Actor 1", "Actor 2"],
+    //   });
+    // }
 
     const movie = await prisma.movie.findUnique({
       where: {
