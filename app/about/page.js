@@ -6,7 +6,7 @@ Description:
 This React component provides an "About" page for the MovieDB platform. It describes the platform’s purpose and mission.
 
 Inputs:  
-- None
+- None 
 
 Processing:  
 - Renders static information about the MovieDB platform.  
@@ -23,8 +23,8 @@ export default function About() {
       <div className="bg-white p-6 rounded-lg shadow-sm">
         <p className="mb-4">
           MovieDB is a comprehensive platform that provides information about
-          movies, TV shows, and celebrities. Our mission is to help you discover
-          and explore the world of entertainment.
+          movies, and celebrities. Our mission is to help you discover and
+          explore the world of entertainment.
         </p>
         <p className="mb-4">
           Whether you are searching for classic films, the latest blockbusters,
