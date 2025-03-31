@@ -99,6 +99,9 @@ const Navbar = () => {
         <Link href="/">
           Hello {adminView ? "Gabby!" : "WHO ARE YOU?!!?!?"}!
         </Link>
+        <Link href="/movie" className="hover:text-gray-600 px-5">
+          Movies
+        </Link>
         <Link href="/tvshow" className="hover:text-gray-600 px-5">
           Tv Shows
         </Link>
