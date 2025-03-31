@@ -126,8 +126,7 @@ export default function Home() {
     <main className="max-w-7xl mx-auto px-4 py-8">
       <div className="justify-between items-center mb-8 text-center">
         <div>
-          <h1 className="text-3xl font-bold mb-2">Entertainment Database</h1>
-          <p className="text-gray-600">THIS IS A DESCRIPTION</p>
+          <h1 className="text-3xl font-bold mb-2">Watched Movies</h1>
         </div>
       </div>
 
