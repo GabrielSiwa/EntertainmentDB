@@ -30,7 +30,7 @@ const Footer = () => {
             <h2 className="text-xl font-bold mb-4">Entertainment Database</h2>
             <p className="text-gray-600">
               Entertainment Database is a comprehensive platform that provides
-              information about movies, TV Shows, music, artist, and
+              information about movies, TV shows, music, artist, and
               celebrities. My goal is to create a user-friendly interface that
               allows users to easily search and discover my favorite
               entertainment.
@@ -46,45 +46,43 @@ const Footer = () => {
               </li>
               <li>
                 <Link
+                  href="/movie"
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  Movies
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/tvshow"
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  Tv Shows
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/music"
+                  className="text-gray-600 hover:text-gray-800"
+                >
+                  Music
+                </Link>
+              </li>
+
+              <li>
+                <Link
                   href="/about"
                   className="text-gray-600 hover:text-gray-800"
                 >
-                  About Us
+                  About Me
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold mb-4">Contact Us</h2>
+            <h2 className="text-xl font-bold mb-4">Contacts</h2>
             <div className="space-y-2">
-              <div className="flex items-start">
-                <svg
-                  width="20"
-                  height="20"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="mr-2 mt-0.5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  ></path>
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  ></path>
-                </svg>
-                <span className="text-gray-600">
-                  1317 27TH SE, Calgary, Canada
-                </span>
-              </div>
               <div className="flex items-start">
                 <svg
                   width="20"
